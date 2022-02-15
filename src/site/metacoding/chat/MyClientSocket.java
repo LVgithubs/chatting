@@ -21,7 +21,7 @@ public class MyClientSocket {
     public MyClientSocket() {
 
         try {
-            socket = new Socket("192.168.0.132", 2000);
+            socket = new Socket("localhost", 2000);
             new Thread(() -> {
 
                 try {
@@ -30,7 +30,6 @@ public class MyClientSocket {
                                 new InputStreamReader(socket.getInputStream()));
                         inputData = reader.readLine();
                         if (inputData.equals("종료")) {
-
                             break;
                         }
                         System.out.println("받은 메세지 : " + inputData);
@@ -48,7 +47,6 @@ public class MyClientSocket {
                 inputData = chatting.nextLine();
 
                 if (inputData.equals("종료")) {
-
                     break;
                 }
                 writer.write(inputData + "\n");
