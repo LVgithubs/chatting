@@ -22,6 +22,7 @@ public class MyClientSocket {
 
         try {
             socket = new Socket("localhost", 2000);
+            // 혼자 할때는 localhost 로 진행할 것
             new Thread(() -> {
 
                 try {
